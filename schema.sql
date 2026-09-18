@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS codes (
+    code_hash CHAR(64) NOT NULL PRIMARY KEY,
+    used TINYINT(1) NOT NULL DEFAULT 0,
+    used_at DATETIME NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS code_attempts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ip_hash VARCHAR(64) NOT NULL,
+    created_at DATETIME NOT NULL,
+    INDEX idx_ip_created (ip_hash, created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

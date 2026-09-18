@@ -1,0 +1,6 @@
+src/config.php
+data/*.csv
+data/*.html
+data/*.sql
+data/*.txt
+data/pending/
